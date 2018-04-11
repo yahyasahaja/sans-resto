@@ -27,7 +27,7 @@ export default class AppRouter extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/qrcode2" component={QRCode2} />
+          <Route path="/qrcode2" component={QRCode2} /> 
           <Route path="/qrcode" component={QRCode} />
           <Route path="/" component={Home} />
         </Switch>
