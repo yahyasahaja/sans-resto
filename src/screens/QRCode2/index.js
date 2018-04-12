@@ -5,7 +5,7 @@ export default class componentName extends Component {
   render() {
     return (
       <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-        <h1 style={{textAlign: 'center', marginBottom: 50, marginTop: 50}}>SANS CAFE QR CODE LOGIN</h1>
+        <h1 style={{textAlign: 'center', marginBottom: 50, marginTop: 50}}>TABLE SCAN</h1>
         <QRCode value="scantable" style={{width: 300, height: 300, margin: 'auto', marginTop: 10}} />
       </div>
     )
