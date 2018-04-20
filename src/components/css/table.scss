@@ -1,7 +1,10 @@
 .container {
-  display: block;
   color: #848b97;
   background: white;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .wrapper {
     width: 100%;
@@ -45,7 +48,6 @@
   }
 
   .pagination {
-    margin: auto;
     margin-top: 30px;
     display: flex;
     justify-content: center;
