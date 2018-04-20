@@ -23,14 +23,14 @@ import styles from './css/table.scss'
 
 //COMPONENT
 export default class Table extends Component {
-  renderHeader() {
+  renderHeaders() {
     let { headers } = this.props
 
     return headers.map((data, i) => {
       return (
-        <div className={styles.header}key={i} >
+        <td className={styles.header}key={i} >
           {data}
-        </div>
+        </td>
       )
     })
   }
@@ -40,13 +40,13 @@ export default class Table extends Component {
 
     return data.map((data, i) => {
       return (
-        <div className={styles.row} key={i} >
+        <tr className={styles.row} key={i} >
           {data.map((data, i) => (
-            <div className={styles.data} key={i}>
+            <td className={styles.data} key={i}>
               {data}
-            </div>
+            </td>
           ))}
-        </div>
+        </tr>
       )
     })
   }
@@ -54,15 +54,17 @@ export default class Table extends Component {
   render() {
     return (
       <div className={styles.container} >
-        <div className={styles.table} >
-          <div className={`${styles.headers} ${styles.row}`} >
-            {this.renderHeader()}
-          </div>
+        <table className={styles.table} >
+          <thead className={`${styles.headers} ${styles.row}`} >
+            <tr>
+              {this.renderHeaders()}
+            </tr>
+          </thead>
           
-          <div className={styles.wrapper} >
+          <tbody className={styles.wrapper} >
             {this.renderData()}
-          </div>
-        </div>
+          </tbody>
+        </table>
       </div>
     )
   }

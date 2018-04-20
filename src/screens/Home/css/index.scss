@@ -1,25 +1,17 @@
 .container {
-  text-align: center;
-  background: #f7f9fb;
+  display: block;
 
-  .header {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: white;
-    
-    .logo {
-      animation: logo-spin infinite 20s linear;
-      height: 80px;
+  .content {
+    display: block;
+    min-height: 100vh;
+    padding: 12px;
+    padding-top: 55px;
+    padding-left: 165px;
+
+    .header {
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 20px;
     }
-    
-    .title {
-      font-size: 1.5em;
-    }
-  }
-  
-  .intro {
-    font-size: large;
   }
 }
 

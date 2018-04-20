@@ -1,5 +1,5 @@
 //MODULES
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
 
 //ASSETS
@@ -7,23 +7,70 @@ import React, { Component, Fragment } from 'react'
 // import { Sidebar, Fragment, Menu, Image } from 'semantic-ui-react'
 
 //STYLES
-// import styles from './css/index.scss'
+import styles from './css/index.scss'
 
 //COMPONENTS
-// import Card from '../../components/Card'
-// import Table from '../../components/Table'
+import Card from '../../components/Card'
+import Table from '../../components/Table'
 import LeftBar from '../../components/LeftBar'
 import TopBar from '../../components/TopBar'
+
+const tableHeaders = [
+  'Number',
+  'Name',
+  'Table',
+]
+
+const tableData = [
+  [
+    'SC001',
+    'Zain Fikri H',
+    '12',
+  ],
+  [
+    'SC002',
+    'Yahya Sahaja ghwughewiuhgwihg ',
+    '11',
+  ],
+  [
+    'SC003',
+    'Vivy Junita',
+    '10',
+  ],
+  [
+    'SC003',
+    'Vivy Junita',
+    '10',
+  ],
+  [
+    'SC003',
+    'Vivy Junita',
+    '10',
+  ],
+  [
+    'SC003',
+    'Vivy Junita',
+    '10',
+  ],
+]
 
 //COMPONENT
 class App extends Component {
   render() {
     return (
-      <Fragment>
+      <div className={styles.container} >
         <TopBar />
         <LeftBar />
-        
-      </Fragment>
+
+        <div className={styles.content} >
+          <Card className={styles.card} >
+            <div className={styles.header} >
+              <h1>Orders</h1>
+            </div>
+            <Table headers={tableHeaders} data={tableData} />
+          </Card>
+        </div>
+      </div>
     )
   }
 }
