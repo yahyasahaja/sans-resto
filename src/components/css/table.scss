@@ -18,9 +18,13 @@
       padding-top: 15px;
     }
 
-    .wrapper {
-      width: 100%;
-      
-    }
+    tr {
+      transition: .3s;
+
+      &:hover {
+        background: #f7f7f7;
+        transition: .1s;
+      }
+    } 
   }
 }
