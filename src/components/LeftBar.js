@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Sidebar, Menu, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import styles from './css/leftBar.scss'
 
 export default class LeftBar extends Component {
   state = { activeItem: 'home' }
@@ -10,29 +11,29 @@ export default class LeftBar extends Component {
   render() {
     const { activeItem } = this.state
     return (
-      <div>
+      <div className={styles.container} >
         <Sidebar 
           as={Menu} 
           visible 
           vertical 
           inverted 
-          style={{ paddingTop: '5vh', width: '10vw', minWidth: '150px', backgroundColor: '#373B3A', position: 'fixed' }}>
+          className={styles.wraper}>
           <Menu.Item 
             name='home' 
             active={activeItem === 'home'} 
             onClick={this.handleItemClick}>  
-            <Link to={'#'} >
-              <Image src={'/static/icon/dashboard.svg'} style={{ width: '18px', }} inline verticalAlign='bottom'/>
-              <span style={{ paddingLeft: '5px' }} >Dashboard</span>
+            <Link to={'/'} >
+              <Image src={'/static/icon/dashboard.svg'} className={styles.image} inline verticalAlign='bottom'/>
+              <span className={styles.span} >Dashboard</span>
             </Link>
           </Menu.Item>
           <Menu.Item 
             name='menu' 
             active={activeItem === 'menu'} 
             onClick={this.handleItemClick}>
-            <Link to={'#'} >
-              <Image src={'/static/icon/menu.svg'} style={{ width: '18px', }} inline verticalAlign='bottom'/>
-              <span style={{ paddingLeft: '5px' }} >Menu</span>
+            <Link to={'/'} >
+              <Image src={'/static/icon/menu.svg'} className={styles.image} inline verticalAlign='bottom'/>
+              <span className={styles.span} >Menu</span>
             </Link>
           </Menu.Item>
           <Menu.Item 
@@ -40,8 +41,26 @@ export default class LeftBar extends Component {
             active={activeItem === 'report'} 
             onClick={this.handleItemClick}>
             <Link to={'#'} >
-              <Image src={'/static/icon/report.svg'} style={{ width: '18px', }} inline verticalAlign='bottom'/>  
-              <span style={{ paddingLeft: '5px' }} >Report</span>
+              <Image src={'/static/icon/report.svg'} className={styles.image} inline verticalAlign='bottom'/>  
+              <span className={styles.span} >Report</span>
+            </Link>
+          </Menu.Item>
+          <Menu.Item 
+            name='settings' 
+            active={activeItem === 'settings'} 
+            onClick={this.handleItemClick}>
+            <Link to={'#'} >
+              <Image src={'/static/icon/settings.svg'} className={styles.image} inline verticalAlign='bottom'/>  
+              <span className={styles.span} >Settings</span>
+            </Link>
+          </Menu.Item>
+          <Menu.Item 
+            name='logout' 
+            active={activeItem === 'logout'} 
+            onClick={this.handleItemClick}>
+            <Link to={'#'} >
+              <Image src={'/static/icon/logout.svg'} className={styles.image} inline verticalAlign='bottom'/>  
+              <span className={styles.span} >Logout</span>
             </Link>
           </Menu.Item>
         </Sidebar>
