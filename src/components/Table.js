@@ -1,7 +1,7 @@
 /*
   TABLE
   USAGE:
-  props.header = [
+  props.headers = [
     'header 1', 'header 2'
   ]
 
@@ -24,9 +24,9 @@ import styles from './css/table.scss'
 //COMPONENT
 export default class Table extends Component {
   renderHeader() {
-    let { header } = this.props
+    let { headers } = this.props
 
-    return header.map((data, i) => {
+    return headers.map((data, i) => {
       return (
         <div className={styles.header}key={i} >
           {data}
