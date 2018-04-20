@@ -41,9 +41,34 @@ const tableData = [
     '10',
   ],
   [
+    'SC002',
+    'Yahya Sahaja ghwughewiuhgwihg ',
+    '11',
+  ],
+  [
     'SC003',
     'Vivy Junita',
     '10',
+  ],
+  [
+    'SC001',
+    'Zain Fikri H',
+    '12',
+  ],
+  [
+    'SC003',
+    'Vivy Junita',
+    '10',
+  ],
+  [
+    'SC001',
+    'Zain Fikri H',
+    '12',
+  ],
+  [
+    'SC002',
+    'Yahya Sahaja ',
+    '11',
   ],
   [
     'SC003',
@@ -54,6 +79,11 @@ const tableData = [
     'SC003',
     'Vivy Junita',
     '10',
+  ],
+  [
+    'SC001',
+    'Zain Fikri H',
+    '12',
   ],
 ]
 
