@@ -10,6 +10,10 @@ import LeftBar from '../../components/LeftBar'
 //STYLES
 // import styles from './css/index.scss'
 
+//COMPONENTS
+import Card from '../../components/Card'
+import Table from '../../components/Table'
+
 //COMPONENT
 class App extends Component {
   render() {
