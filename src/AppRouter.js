@@ -1,6 +1,6 @@
 //MODULES
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 //SCREENS
@@ -29,7 +29,8 @@ export default class AppRouter extends Component {
         <Switch>
           <Route path="/qrcode2" component={QRCode2} /> 
           <Route path="/qrcode" component={QRCode} />
-          <Route path="/" component={Home} />
+          <Redirect from="/" exact to="/home" />
+          <Route path="/home" exact component={Home} />
         </Switch>
       </BrowserRouter>
     )

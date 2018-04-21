@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import { Sidebar, Menu, Image } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import styles from './css/leftBar.scss'
 
-export default class LeftBar extends Component {
+class LeftBar extends Component {
   state = { activeItem: 'home' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick(link, e, activeItem) {
+    e.preventDefault()
+    this.props.history.push(link)
+    this.setState({activeItem})
+  }
 
   render() {
-    const { activeItem } = this.state
+    let { activeItem } = this.state
     return (
       <div className={styles.container} >
         <Sidebar 
@@ -21,47 +25,47 @@ export default class LeftBar extends Component {
           <Menu.Item 
             name='home' 
             active={activeItem === 'home'} 
-            onClick={this.handleItemClick}>  
-            <Link to={'/'} >
+            onClick={this.handleItemClick.bind(this, '/home')}>  
+            <div  >
               <Image src={'/static/icon/dashboard.svg'} className={styles.image} inline verticalAlign='bottom'/>
               <span className={styles.span} >Dashboard</span>
-            </Link>
+            </div>
           </Menu.Item>
           <Menu.Item 
             name='menu' 
             active={activeItem === 'menu'} 
-            onClick={this.handleItemClick}>
-            <Link to={'/'} >
+            onClick={this.handleItemClick.bind(this, '/menu')}>
+            <div  >
               <Image src={'/static/icon/menu.svg'} className={styles.image} inline verticalAlign='bottom'/>
               <span className={styles.span} >Menu</span>
-            </Link>
+            </div>
           </Menu.Item>
           <Menu.Item 
             name='report' 
             active={activeItem === 'report'} 
-            onClick={this.handleItemClick}>
-            <Link to={'#'} >
+            onClick={this.handleItemClick.bind(this, '/report')}>
+            <div to={'#'} >
               <Image src={'/static/icon/report.svg'} className={styles.image} inline verticalAlign='bottom'/>  
               <span className={styles.span} >Report</span>
-            </Link>
+            </div>
           </Menu.Item>
           <Menu.Item 
             name='settings' 
             active={activeItem === 'settings'} 
-            onClick={this.handleItemClick}>
-            <Link to={'#'} >
+            onClick={this.handleItemClick.bind(this, '/settings')}>
+            <div to={'#'} >
               <Image src={'/static/icon/settings.svg'} className={styles.image} inline verticalAlign='bottom'/>  
               <span className={styles.span} >Settings</span>
-            </Link>
+            </div>
           </Menu.Item>
           <Menu.Item 
             name='logout' 
             active={activeItem === 'logout'} 
-            onClick={this.handleItemClick}>
-            <Link to={'#'} >
+            onClick={this.handleItemClick.bind(this, '/logout')}>
+            <div to={'#'} >
               <Image src={'/static/icon/logout.svg'} className={styles.image} inline verticalAlign='bottom'/>  
               <span className={styles.span} >Logout</span>
-            </Link>
+            </div>
           </Menu.Item>
         </Sidebar>
 
@@ -69,3 +73,5 @@ export default class LeftBar extends Component {
     )
   }
 }
+
+export default withRouter(LeftBar)

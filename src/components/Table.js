@@ -21,6 +21,9 @@ import React, { Component } from 'react'
 //STYLES 
 import styles from './css/table.scss'
 
+//COMPONENTS
+import { Pagination } from 'semantic-ui-react'
+
 //COMPONENT
 export default class Table extends Component {
   renderHeaders() {
@@ -28,7 +31,7 @@ export default class Table extends Component {
 
     return headers.map((data, i) => {
       return (
-        <td className={styles.header}key={i} >
+        <td className={styles.header} key={i} >
           {data}
         </td>
       )
@@ -51,20 +54,67 @@ export default class Table extends Component {
     })
   }
 
+  onPageChange = (e, { activePage }) => {
+    this.props.onPageChange(activePage)
+  }
+
   render() {
+    let { loading, pagination, totalPages, defaultWidth } = this.props
+
+    // loading = true
+
+    let style = {}
+
+    if (loading) style.filter = 'blur(10px)'
+    if (defaultWidth) style.width = defaultWidth
+
     return (
       <div className={styles.container} >
-        <table className={styles.table} >
-          <thead className={`${styles.headers} ${styles.row}`} >
-            <tr>
-              {this.renderHeaders()}
-            </tr>
-          </thead>
-          
-          <tbody className={styles.wrapper} >
-            {this.renderData()}
-          </tbody>
-        </table>
+        <div className={styles.wrapper} >
+          <table
+            className={styles.table}
+            style={style}
+          >
+            <thead className={`${styles.headers} ${styles.row}`} >
+              <tr>
+                {this.renderHeaders()}
+              </tr>
+            </thead>
+
+            <tbody className={styles.wrapper} >
+              {this.renderData()}
+            </tbody>
+          </table>
+
+          {
+            loading
+              ? (
+                <div className={styles.loading}>
+                  Loading ...
+                </div>
+              )
+              : ''
+          }
+        </div>
+
+        {
+          pagination
+            ? (
+              <div className={styles.pagination} >
+                <Pagination
+                  defaultActivePage={1}
+                  firstItem={null}
+                  lastItem={null}
+                  pointing
+                  secondary
+                  totalPages={totalPages || 10}
+                  onPageChange={this.onPageChange}
+                />
+              </div>
+            )
+            : ''
+        }
+
       </div>
     )
   }
