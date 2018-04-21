@@ -14,7 +14,7 @@ export default class LeftBar extends Component {
       <div className={styles.container} >
         <Sidebar 
           as={Menu} 
-          visible 
+          visible   
           vertical 
           inverted 
           className={styles.wraper}>

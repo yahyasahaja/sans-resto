@@ -69,6 +69,20 @@ class App extends Component {
             </div>
             <Table headers={tableHeaders} data={tableData} />
           </Card>
+
+          <Card className={styles.card} >
+            <div className={styles.header} >
+              <h1>Orders</h1>
+            </div>
+            <Table headers={tableHeaders} data={tableData} />
+          </Card>
+
+          <Card className={styles.card} >
+            <div className={styles.header} >
+              <h1>Orders</h1>
+            </div>
+            <Table headers={tableHeaders} data={tableData} />
+          </Card>
         </div>
       </div>
     )
