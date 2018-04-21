@@ -67,6 +67,20 @@ class LeftBar extends Component {
               <span className={styles.span} >Logout</span>
             </div>
           </Menu.Item>
+
+          <div className={styles.bottom} >
+            <div className={styles.support}>
+              <Image className={styles.imgSupport} src="/static/icon/support.svg"  inline verticalAlign='bottom' />
+              <span className={styles.title} >Support</span>
+            </div>
+            <div className={styles.text}>
+              <span>customer@sans.id</span>
+              <div>+62 85851851276</div>
+            </div>
+            <div>
+              <a className={styles.customer} href="customer.sans.id" >customer.sans.id</a>
+            </div>
+          </div>
         </Sidebar>
 
       </div>
