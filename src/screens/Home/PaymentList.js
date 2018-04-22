@@ -19,37 +19,37 @@ const tableHeaders = [
 const tableData = [
   [
     'SC001',
-    'Zain Fikri H',
+    'Hendro Wicaksono',
     '12',
   ],
   [
     'SC002',
-    'Yahya Sahaja ghwughewiuhgwihg ',
+    'Budiman',
     '11',
   ],
   [
     'SC003',
-    'Vivy Junita',
+    'Zain Fikri',
     '10',
   ],
   [
     'SC003',
-    'Vivy Junita',
+    'M Faiz',
     '10',
   ],
   [
     'SC003',
-    'Vivy Junita',
+    'Giff',
     '10',
   ],
   [
     'SC002',
-    'Yahya Sahaja ghwughewiuhgwihg ',
+    'Tifo',
     '11',
   ],
   [
     'SC003',
-    'Vivy Junita',
+    'Otong',
     '10',
   ],
   [
@@ -93,7 +93,7 @@ const tableData = [
 const MAX_ITEMS = 5
 
 //COMPONENT
-export default class Orders extends Component {
+export default class PaymentList extends Component {
   state = {
     tableData: tableData.slice(0, 5),
     loading: false
@@ -120,7 +120,7 @@ export default class Orders extends Component {
       <Card className={styles.card} >
         <div className={styles.header} >
           <div className={styles.title} >
-            <h1>Orders</h1>
+            <h1>Payment List</h1>
             <div>
               <Label circular color="grey">2</Label>
             </div>
