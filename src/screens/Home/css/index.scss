@@ -2,14 +2,15 @@
   display: block;
 
   .content {
-    display: block;
+    display: flex;
     min-height: 100vh;
     padding: 12px;
     padding-top: 55px;
     padding-left: 165px;
+    flex-wrap: wrap;
 
     .card {
-      display: block;
+      display: flex;
   
       .header {
         border-bottom: 1px solid #e6e6e6;
@@ -17,9 +18,4 @@
       }
     }
   }
-}
-
-@keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

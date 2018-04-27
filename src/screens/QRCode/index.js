@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import QRCode from 'qrcode.react'
-
+// import { Dimmer, Loader } from 'semantic-ui-react'
 // import Table from '../../components/Table'
 
 export default class componentName extends Component {

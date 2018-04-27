@@ -90,12 +90,12 @@ const tableData = [
 ]
 
 //INNER_CONFIG
-const MAX_ITEMS = 5
+const MAX_ITEMS = 8
 
 //COMPONENT
 export default class PaymentList extends Component {
   state = {
-    tableData: tableData.slice(0, 5),
+    tableData: tableData.slice(0, MAX_ITEMS),
     loading: false
   }
 

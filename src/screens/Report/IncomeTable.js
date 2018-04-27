@@ -18,74 +18,34 @@ const tableHeaders = [
 
 const tableData = [
   [
-    'SC001',
-    'Zain Fikri H',
-    '12',
+    'Sate Ayam',
+    '30',
+    '300.000',
   ],
   [
-    'SC002',
-    'Yahya Sahaja ghwughewiuhgwihg ',
-    '11',
+    'Sate Ayam',
+    '30',
+    '300.000',
   ],
   [
-    'SC003',
-    'Vivy Junita',
-    '10',
+    'Sate Ayam',
+    '30',
+    '300.000',
   ],
   [
-    'SC003',
-    'Vivy Junita',
-    '10',
+    'Sate Ayam',
+    '30',
+    '300.000',
   ],
   [
-    'SC003',
-    'Vivy Junita',
-    '10',
+    'Sate Ayam',
+    '30',
+    '300.000',
   ],
   [
-    'SC002',
-    'Yahya Sahaja ghwughewiuhgwihg ',
-    '11',
-  ],
-  [
-    'SC003',
-    'Vivy Junita',
-    '10',
-  ],
-  [
-    'SC001',
-    'Zain Fikri H',
-    '12',
-  ],
-  [
-    'SC003',
-    'Vivy Junita',
-    '10',
-  ],
-  [
-    'SC001',
-    'Zain Fikri H',
-    '12',
-  ],
-  [
-    'SC002',
-    'Yahya Sahaja ',
-    '11',
-  ],
-  [
-    'SC003',
-    'Vivy Junita',
-    '10',
-  ],
-  [
-    'SC003',
-    'Vivy Junita',
-    '10',
-  ],
-  [
-    'SC001',
-    'Zain Fikri H',
-    '12',
+    'Sate Ayam',
+    '30',
+    '300.000',
   ],
 ]
 
@@ -120,7 +80,7 @@ export default class IncomeTable extends Component {
       <Card className={styles.card} >
         <div className={styles.header} >
           <div className={styles.title} >
-            <h1>Orders</h1>
+            <h1>Income</h1>
             <div>
               <Label circular color="grey">2</Label>
             </div>
