@@ -132,12 +132,12 @@ const tableData = [
 ]
 
 //INNER_CONFIG
-const MAX_ITEMS = 6
+const MAX_ITEMS = 5
 
 //COMPONENT
 export default class Orders extends Component {
   state = {
-    tableData: tableData.slice(0, 6),
+    tableData: tableData.slice(0, MAX_ITEMS),
     loading: false
   }
 

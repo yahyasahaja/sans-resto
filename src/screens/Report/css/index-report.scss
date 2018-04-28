@@ -2,12 +2,11 @@
   display: block;
 
   .content {
-    display: flex;
+    display: block;
     min-height: 100vh;
     padding: 12px;
     padding-top: 55px;
     padding-left: 165px;
-    flex-wrap: wrap;
 
     .card {
       display: flex;

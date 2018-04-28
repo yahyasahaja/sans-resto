@@ -1,22 +1,28 @@
 .card {
-  display: block;
-  height: 100%;
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
 
   .left {
     padding-right: 20px;
-    justify-content: space-between;
-    align-items: center;
-    float: left;
-    height: 100%;
+    align-items: left;
     width: 13vw;
-    min-width: 150px;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
 
     .title {
-      display: inline-block;
+      display: inline-table;
+      font-size: 11pt;
+      line-height: 2.3em;
 
       div {
         padding-top: 8px;
         margin-left: 10px;
+      }
+
+      a {
+        color: #848b97;
       }
     }
   }
@@ -25,20 +31,15 @@
     // padding-right: 20px;
     border-left: 1px solid #e6e6e6;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    height: 100%;
-
-    .img {
-      width: 60px;
-      max-width: 60px;
+    line-height: 1em;
+  
+    .imgMenus {
+      display: flex;
+      width: 50px;
+      height: 50px;
       
-      .imgMenus {
-        display: flex;
-        width: 50px;
-        height: 50px;
-        justify-content: space-between;
-      }
     }
 
     .title {

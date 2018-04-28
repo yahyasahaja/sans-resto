@@ -4,6 +4,22 @@ import { withRouter } from 'react-router-dom'
 import styles from './css/leftBar.scss'
 
 class LeftBar extends Component {
+  componentDidMount() {
+    this.setState({activeItem: this.getRouteIndex(location.pathname)})
+  }
+
+  getRouteIndex(routeName) {
+    if (routeName.indexOf('home') !== -1) {
+      return 'home'
+    } else if (routeName.indexOf('menu') !== -1) {
+      return 'menu'
+    } else if (routeName.indexOf('report') !== -1) {
+      return 'report'
+    } else {
+      return 'settings'
+    }
+  }
+
   state = { activeItem: 'home' }
 
   handleItemClick(link, e, activeItem) {
