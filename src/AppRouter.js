@@ -8,6 +8,7 @@ import Home from './screens/Home'
 import QRCode from './screens/QRCode/index'
 import QRCode2 from './screens/QRCode2'
 import Report from './screens/Report'
+import Settings from './screens/Settings'
 
 //CONFIG
 import {
@@ -33,6 +34,7 @@ export default class AppRouter extends Component {
           <Redirect from="/" exact to="/home" />
           <Route path="/home" exact component={Home} />
           <Route path="/report" exact component={Report} />
+          <Route path="/settings" exact component={Settings} />
         </Switch>
       </BrowserRouter>
     )

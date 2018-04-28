@@ -1,7 +1,6 @@
 .card {
   display: block;
   float: left;
-  width: 48%;
 
   .header {
     border-bottom: 1px solid #e6e6e6;
@@ -17,6 +16,19 @@
         padding-top: 8px;
         margin-left: 10px;
       }
+    }
+  }
+
+  .wrapper {
+    min-width: 450px;
+    padding: 20px;
+
+    .input {
+      margin: 20px 0;
+    }
+
+    .button {
+      float: right;
     }
   }
 }
