@@ -1,7 +1,6 @@
 //MODULES
 import React, { Component } from 'react'
-import { Search, Label } from 'semantic-ui-react'
-import _ from 'lodash'
+import { Dropdown, Label } from 'semantic-ui-react'
 
 //STYLES
 import styles from './css/income-table.scss'
@@ -57,19 +56,30 @@ export default class IncomeChart extends Component {
               <Label circular color="grey">2</Label>
             </div>
           </div>
-          <Search
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
-            {...this.props}
-          />
+          <div className={styles.options} >
+            <Dropdown fluid selection defaultValue="monthly" placeholder="sort" options={[
+              {
+                text: 'Monthly',
+                value: 'monthly',
+              },
+              {
+                text: 'Daily',
+                value: 'daily',
+              },
+              {
+                text: 'Yearly',
+                value: 'yearly',
+              },
+            ]} />
+          </div>
         </div>
         <Line
           data={
             {
-              labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+              labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun', 'Jul'],
               datasets: [{
-                label: '# of Votes',
-                data: tableData,
+                label: 'Monthly income (in thousands)',
+                data: tableData.map(v => v / 1000),
                 backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',

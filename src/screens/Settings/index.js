@@ -7,15 +7,13 @@ import React, { Component } from 'react'
 // import { Sidebar, Fragment, Menu, Image } from 'semantic-ui-react'
 
 //STYLES
-import styles from './css/index.scss'
+import styles from './css/index-settings.scss'
 
 //COMPONENTS
 import LeftBar from '../../components/LeftBar'
 import TopBar from '../../components/TopBar'
-import Orders from './Orders'
-import PaymentList from './PaymentList'
-import OrderList from './OrderList'
-import PaymentDetail from './PaymentDetail'
+import ProfileSettings from './ProfileSettings'
+import RestaurantProfile from './RestaurantProfile'
 
 //COMPONENT
 class App extends Component {
@@ -26,10 +24,8 @@ class App extends Component {
         <LeftBar />
 
         <div className={styles.content} >
-          <Orders />
-          <OrderList />
-          <PaymentList />
-          <PaymentDetail />
+          <ProfileSettings />
+          <RestaurantProfile />
         </div>
       </div>
     )
