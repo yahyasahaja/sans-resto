@@ -1,5 +1,5 @@
 //MODULES
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 
 //ASSETS
 
@@ -9,14 +9,19 @@ import styles from './css/index.scss'
 //COMPONENTS
 import LeftBar from '../../components/LeftBar'
 import TopBar from '../../components/TopBar'
+import Menus from './Menus'
 
 export default class Menu extends Component {
   render () {
     return (
-      <Fragment className={styles.container}>
+      <div className={styles.container}>
         <TopBar />
         <LeftBar />
-      </Fragment>
+
+        <div className={styles.content} >
+          <Menus />
+        </div>
+      </div>
     )
   }
 }
