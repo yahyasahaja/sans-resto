@@ -28,7 +28,9 @@ export default class ListDesc extends Component {
     return (
       <div className={styles.container} >
         <table>
-          {this.renderList()}
+          <tbody>
+            {this.renderList()}
+          </tbody>
         </table>
       </div>
     )
