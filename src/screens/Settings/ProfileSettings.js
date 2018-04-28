@@ -1,7 +1,6 @@
 //MODULES
 import React, { Component } from 'react'
-import { Search, Input, Button } from 'semantic-ui-react'
-import _ from 'lodash'
+import { Input, Button } from 'semantic-ui-react'
 
 //STYLES
 import styles from './css/profile-settings.scss'
@@ -21,8 +20,7 @@ export default class ProfileSettings extends Component {
 
   onSubmit = e => {
     e.preventDefault()
-
-
+    
   }
 
   render() {
@@ -32,11 +30,6 @@ export default class ProfileSettings extends Component {
           <div className={styles.title} >
             <h1>Owner Profile</h1>
           </div>
-          <Search
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
-            {...this.props}
-          />
         </div>
         
         <form className={styles.wrapper} onSubmit={this.onSubmit} >

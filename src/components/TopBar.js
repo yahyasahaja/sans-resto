@@ -31,7 +31,7 @@ export default class TopBar extends Component {
             trigger={trigger} 
             options={notif} 
             pointing='top right' 
-            icon="null" 
+            icon={<div style={{width: 30}} />}
             noResultsMessage='No notifications yet' />
           <Image src='/static/icon/profile.svg' avatar />
           <span>Zain Fikri Hanastyono</span>
