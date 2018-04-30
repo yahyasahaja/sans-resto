@@ -10,7 +10,7 @@ import theme from './assets/css/theme.scss'
 import AppRouter from './AppRouter'
 
 const contextTheme = {
-  RTInput: theme
+  RTInput: theme 
 }
 
 class App extends Component {
