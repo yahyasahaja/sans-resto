@@ -16,7 +16,7 @@ const contextTheme = {
 class App extends Component {
   componentDidMount() {
 
-  }
+  } 
 
   render() {
     return (
