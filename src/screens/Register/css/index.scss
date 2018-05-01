@@ -15,7 +15,7 @@
     align-items: center;
 
     .title {
-      padding-top: 3vh;
+      padding-top: 2vh;
       h1 {
         color: #076645;
         font-weight: bold;
@@ -31,7 +31,7 @@
     }
     
     .register {
-      padding-top: 2vh;
+      padding-top: 1vh;
       min-width: 19vw;
 
       a {
@@ -43,7 +43,7 @@
     .cs {
       position: absolute;
       bottom: 0;
-      padding-bottom: 2vh;
+      padding-bottom: 1.5vh;
       padding-left: 3vw;
       left: 0;
 
@@ -55,7 +55,7 @@
       }
       
       .support {
-        padding-bottom: 15px;
+        padding-bottom: 8px;
   
         
         .title {
@@ -73,8 +73,13 @@
         color:#076645;
         font-size: 0.8em;
         font-weight: 300;
-        padding-bottom: 5px;
+        padding-bottom: 2px;
       }
+    }
+    
+    .link {
+      color: #076645;
+      padding-top: 1vh;
     }
     
   }

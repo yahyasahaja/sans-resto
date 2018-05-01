@@ -90,11 +90,11 @@ class LeftBar extends Component {
               <span className={styles.title} >Support</span>
             </div>
             <div className={styles.text}>
-              <span>customer@sans.id</span>
+              <span>sans@ngopi.men</span>
               <div>+62 85851851276</div>
             </div>
             <div>
-              <a className={styles.customer} href="http://customer.sans.id" target="_blank" >customer.sans.id</a>
+              <a className={styles.customer} href="http://customer.sans.ngopi.men" target="_blank" >customer.sans.ngopi.men</a>
             </div>
           </div>
         </Sidebar>

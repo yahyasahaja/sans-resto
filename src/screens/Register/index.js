@@ -1,6 +1,7 @@
 //MODULES
 import React, { Component } from 'react'
 import { Button, Form, Image, Checkbox } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 //ASSETS
 
@@ -54,9 +55,11 @@ export default class Register extends Component {
               <Form.Field>
                 <Checkbox label='I agree to the Terms and Conditions' />
               </Form.Field>
-              <Button type='submit' fluid color='grey' >Login</Button>
+              <Button type='submit' fluid color='grey' >Register</Button>
             </Form>
           </div>
+
+          <Link className={styles.link} to="/login">you have an account! login here</Link>
 
           <div className={styles.cs} >
             <div className={styles.support}>
@@ -64,7 +67,7 @@ export default class Register extends Component {
               <span className={styles.title} >Support</span>
             </div>
             <div className={styles.text}>
-              <span>customer@sans.id</span>
+              <span>sans@ngopi.men</span>
               <div>+62 85851851276</div>
             </div>
             <div>

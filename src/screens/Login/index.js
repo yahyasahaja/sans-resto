@@ -1,6 +1,7 @@
 //MODULES
 import React, { Component } from 'react'
 import { Button, Form, Image } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 //ASSETS
 
@@ -42,13 +43,15 @@ export default class Login extends Component {
             </Form>
           </div>
 
+          <Link className={styles.link} to="/register">create a new account</Link>
+
           <div className={styles.cs} >
             <div className={styles.support}>
               <Image className={styles.imgSupport} src="/static/icon/support_green.svg" inline verticalAlign='bottom' />        
               <span className={styles.title} >Support</span>
             </div>
             <div className={styles.text}>
-              <span>customer@sans.id</span>
+              <span>sans@ngopi.men</span>
               <div>+62 85851851276</div>
             </div>
             <div>
