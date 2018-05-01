@@ -10,6 +10,8 @@ import QRCode from './screens/QRCode/index'
 import QRCode2 from './screens/QRCode2'
 import Report from './screens/Report'
 import Settings from './screens/Settings'
+import Login from './screens/Login'
+import Register from './screens/Register'
 
 //CONFIG
 import {
@@ -37,6 +39,8 @@ export default class AppRouter extends Component {
           <Route path="/menu" exact component={Menu} />
           <Route path="/report" exact component={Report} />
           <Route path="/settings" exact component={Settings} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
         </Switch>
       </BrowserRouter>
     )
