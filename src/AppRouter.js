@@ -5,6 +5,7 @@ import axios from 'axios'
 
 //SCREENS
 import Home from './screens/Home'
+import Menu from './screens/Menu'
 import QRCode from './screens/QRCode/index'
 import QRCode2 from './screens/QRCode2'
 import Report from './screens/Report'
@@ -33,6 +34,7 @@ export default class AppRouter extends Component {
           <Route path="/qrcode" component={QRCode} />
           <Redirect from="/" exact to="/home" />
           <Route path="/home" exact component={Home} />
+          <Route path="/menu" exact component={Menu} />
           <Route path="/report" exact component={Report} />
           <Route path="/settings" exact component={Settings} />
         </Switch>

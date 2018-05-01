@@ -94,7 +94,7 @@ class LeftBar extends Component {
               <div>+62 85851851276</div>
             </div>
             <div>
-              <a className={styles.customer} href="customer.sans.id" >customer.sans.id</a>
+              <a className={styles.customer} href="http://customer.sans.id" target="_blank" >customer.sans.id</a>
             </div>
           </div>
         </Sidebar>
