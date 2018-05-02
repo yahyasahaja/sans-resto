@@ -2,25 +2,49 @@
 import React, { Component } from 'react'
 import { Button, Form, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-
-//ASSETS
+import axios from 'axios'
 
 //STYLES
 import styles from './css/index.scss'
 
-//COMPONENTS
+//CONFIG
+import { GRAPHQL_END_POINT } from '../../config'
 
+//COMPONENTS
 export default class Login extends Component {
-  
   onSubmit = e => {
     e.preventDefault()
-    
+
+    let { email, password } = this.state
+
+    axios.post(GRAPHQL_END_POINT, {
+      query: `
+        mutation {
+          restaurantAdminLogin (email: "${email}", password: "${password}")
+        }
+      `
+    }).then(({data}) => {
+      console.log(data.data.restaurantAdminLogin)
+    }).catch(err => console.log(err))
   }
-  
+
+  state = {
+    email: '',
+    password: '',
+  }
+
+  handleChange(key, e) {
+    this.setState({[key]: e.target.value})
+  }
+
   render() {
     return (
       <div className={styles.container}>
         <div className={styles.bg}>
+          <img src="/static/image/BG.jpg" alt=""/>
+        </div>
+
+        <div className={styles.wrapper} >
           <div className={styles.title}>
             <h1>SANS RESTO</h1>
             <a>Ease of Sales Management</a>
@@ -30,11 +54,21 @@ export default class Login extends Component {
             <Form onSubmit={this.onSubmit} >
               <Form.Field>
                 <label>Email</label>
-                <input placeholder='resto@sans.ngopi.men' />
+                <input 
+                  placeholder='resto@sans.ngopi.men' 
+                  onChange={this.handleChange.bind(this, 'email')}
+                  value={this.state.email}
+                  type="email"
+                />
               </Form.Field>
               <Form.Field>
                 <label>Password</label>
-                <input placeholder='*******' />
+                <input 
+                  placeholder='*******' 
+                  onChange={this.handleChange.bind(this, 'password')}
+                  value={this.state.password}
+                  type="password"
+                />
               </Form.Field>
               <Form.Field>
                 <a>forget password?</a>
@@ -47,7 +81,7 @@ export default class Login extends Component {
 
           <div className={styles.cs} >
             <div className={styles.support}>
-              <Image className={styles.imgSupport} src="/static/icon/support_green.svg" inline verticalAlign='bottom' />        
+              <Image className={styles.imgSupport} src="/static/icon/support_green.svg" inline verticalAlign='bottom' />
               <span className={styles.title} >Support</span>
             </div>
             <div className={styles.text}>
