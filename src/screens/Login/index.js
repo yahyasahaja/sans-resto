@@ -10,6 +10,9 @@ import styles from './css/index.scss'
 //CONFIG
 import { GRAPHQL_END_POINT } from '../../config'
 
+//STORE 
+import { token } from '../../services/stores'
+
 //COMPONENTS
 export default class Login extends Component {
   onSubmit = e => {
@@ -24,7 +27,9 @@ export default class Login extends Component {
         }
       `
     }).then(({data}) => {
-      console.log(data.data.restaurantAdminLogin)
+      let loginToken = data.data.restaurantAdminLogin
+      token.raw = loginToken
+      this.props.history.push('/home')
     }).catch(err => console.log(err))
   }
 
