@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import { Button, Form, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Message } from 'semantic-ui-react'
+
 
 //STYLES
 import styles from './css/index.scss'
@@ -19,7 +21,7 @@ export default class Login extends Component {
     e.preventDefault()
 
     let { email, password } = this.state
-    this.setState({isLoading: true})
+    this.setState({isLoading: true, error: null})
 
     axios.post(GRAPHQL_END_POINT, {
       query: `
@@ -28,23 +30,35 @@ export default class Login extends Component {
         }
       `
     }).then(({data}) => {
-      this.setState({isLoading: false})
+      this.setState({isLoading: false, error: !data ? 'Login failed' : ''})
       if (!data) return
 
       let loginToken = data.data.restaurantAdminLogin
       token.raw = loginToken
       this.props.history.push('/home')
-    }).catch(err => console.log(err))
+    }).catch(err => {
+      console.log(err)
+      this.setState({error: 'Login failed'})
+    })
   }
 
   state = {
     email: '',
     password: '',
     isLoading: false,
+    error: null,
   }
 
   handleChange(key, e) {
     this.setState({[key]: e.target.value})
+  }
+
+  renderMessage = () => {
+    if (this.state.error) return (
+      <Message negative>
+        <p>{this.state.error}</p>
+      </Message>
+    )
   }
 
   render() {
@@ -84,6 +98,7 @@ export default class Login extends Component {
                 <a>forget password?</a>
               </Form.Field>
               <Button loading={this.state.isLoading} type='submit' fluid color='grey' >Login</Button>
+              {this.renderMessage()}
             </Form>
           </div>
 
