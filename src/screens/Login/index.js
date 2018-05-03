@@ -19,6 +19,7 @@ export default class Login extends Component {
     e.preventDefault()
 
     let { email, password } = this.state
+    this.setState({isLoading: true})
 
     axios.post(GRAPHQL_END_POINT, {
       query: `
@@ -27,6 +28,7 @@ export default class Login extends Component {
         }
       `
     }).then(({data}) => {
+      this.setState({isLoading: false})
       if (!data) return
 
       let loginToken = data.data.restaurantAdminLogin
@@ -38,6 +40,7 @@ export default class Login extends Component {
   state = {
     email: '',
     password: '',
+    isLoading: false,
   }
 
   handleChange(key, e) {
@@ -80,7 +83,7 @@ export default class Login extends Component {
               <Form.Field>
                 <a>forget password?</a>
               </Form.Field>
-              <Button type='submit' fluid color='grey' >Login</Button>
+              <Button loading={this.state.isLoading} type='submit' fluid color='grey' >Login</Button>
             </Form>
           </div>
 
