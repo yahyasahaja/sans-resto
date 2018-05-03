@@ -27,7 +27,7 @@ export default class Login extends Component {
         }
       `
     }).then(({data}) => {
-      if (data) return
+      if (!data) return
 
       let loginToken = data.data.restaurantAdminLogin
       token.raw = loginToken
