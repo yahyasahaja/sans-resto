@@ -34,7 +34,7 @@ export default class Login extends Component {
       if (!data) return
 
       let loginToken = data.data.restaurantAdminLogin
-      token.raw = loginToken
+      token.setToken(loginToken)
       this.props.history.push('/home')
     }).catch(err => {
       console.log(err)
