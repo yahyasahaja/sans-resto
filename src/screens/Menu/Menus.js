@@ -39,6 +39,7 @@ export default class Orders extends Component {
     // image: {},
     menus: [],
     restaurant_id: 1,
+    categories: []
   }
 
   componentDidMount() {
@@ -51,16 +52,22 @@ export default class Orders extends Component {
           price
           image
         }
+
+        allCategories {
+          name
+          id
+        }
       }
       `
     }).then(({data}) => {
       if(!data) return
 
+      console.log(data.data.allCategories[0].name)
       this.setState({
         menus: data.data.allRestaurantMenus.map((menu)=>{
           return[
             <div className={styles.img} >
-              <Image className={styles.imgMenus} src="/static/image/sate.png" />
+              <Image className={styles.imgMenus} src={menu.image} />
             </div>,
             <div className={styles.title}>{menu.name}<div className={styles.desc}>{menu.description}</div></div>,
             <div className={styles.delete} >{menu.price} 
@@ -68,12 +75,29 @@ export default class Orders extends Component {
               <span className={`material-icons ${styles.icon}`}>delete</span>
             </div>,
           ]
-        })
+        }),
+
+        categories: data.data.allCategories
       })
 
     })
   }
 
+<<<<<<< HEAD
+=======
+  renderCategories() {
+    
+    
+    return this.state.categories.map((data) => {
+      return (
+        <div>
+          <Link to="/menu">{data.name}</Link>
+        </div>
+      )
+    })
+  }
+
+>>>>>>> 94b13184ff25b2831f9e229a356c744daa20410b
   handleChange = () => {
     // this.setState({loading: true})
     // setTimeout(() => {
@@ -101,10 +125,10 @@ export default class Orders extends Component {
             {...this.props}
           />
           <div className={styles.title} >
-            <div>
-              <Link to="/menu" >Spesial</Link>
-            </div>
-            <div>
+            
+            {this.renderCategories()}
+            
+            {/* <div>
               <Link to="/menu" >Soups</Link>
             </div>
             <div>
@@ -118,7 +142,7 @@ export default class Orders extends Component {
             </div>
             <div>
               <Link to="/menu" >Wraps</Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.right} >
