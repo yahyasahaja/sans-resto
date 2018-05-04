@@ -57,7 +57,6 @@ export default class Orders extends Component {
     }).then(({data}) => {
       if(!data) return
 
-      return console.log(data)
       this.setState({
         menus: data.data.allRestaurantMenus.map((menu)=>{
           return[
