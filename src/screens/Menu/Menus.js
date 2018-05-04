@@ -83,8 +83,6 @@ export default class Orders extends Component {
     })
   }
 
-<<<<<<< HEAD
-=======
   renderCategories() {
     
     
@@ -97,7 +95,6 @@ export default class Orders extends Component {
     })
   }
 
->>>>>>> 94b13184ff25b2831f9e229a356c744daa20410b
   handleChange = () => {
     // this.setState({loading: true})
     // setTimeout(() => {
