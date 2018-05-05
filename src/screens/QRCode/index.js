@@ -45,19 +45,15 @@ export default class componentName extends Component {
 
   state = {
     isLoading: false,
-    uuid: null,
+    uuid: '',
     unmounted: false,
   }
 
   render() {
     return (
       <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-        <h1 style={{textAlign: 'center', marginBottom: 50, marginTop: 50}}>CAFETARIA UB</h1>
-        {
-          !this.state.uuid || this.state.isLoading
-            ? 'Loading ... '
-            : <QRCode value={this.state.uuid} style={{width: 300, height: 300, margin: 'auto', marginTop: 10}} />
-        }
+        <h1 style={{textAlign: 'center', marginBottom: 50, marginTop: 50}}>Aneka Sate</h1>
+        <QRCode value={this.state.uuid} style={{width: 300, height: 300, margin: 'auto', marginTop: 10}} />
       </div>
     )
   }
