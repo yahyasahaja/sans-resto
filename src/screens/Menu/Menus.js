@@ -53,16 +53,16 @@ export default class Orders extends Component {
           image
         }
 
-        allCategories {
-          name
-          id
-        }
       }
       `
+      // allCategories {
+      //   name
+      //   id
+      // }
     }).then(({data}) => {
       if(!data) return
 
-      console.log(data.data.allCategories[0].name)
+      //console.log(data.data.allCategories[0].name)
       this.setState({
         menus: data.data.allRestaurantMenus.map((menu)=>{
           return[
@@ -83,17 +83,17 @@ export default class Orders extends Component {
     })
   }
 
-  renderCategories() {
+  // renderCategories() {
     
     
-    return this.state.categories.map((data) => {
-      return (
-        <div>
-          <Link to="/menu">{data.name}</Link>
-        </div>
-      )
-    })
-  }
+  //   return this.state.categories.map((data) => {
+  //     return (
+  //       <div>
+  //         <Link to="/menu">{data.name}</Link>
+  //       </div>
+  //     )
+  //   })
+  // }
 
   handleChange = () => {
     // this.setState({loading: true})
@@ -123,23 +123,15 @@ export default class Orders extends Component {
           />
           <div className={styles.title} >
             
-            {this.renderCategories()}
+            {/* {this.renderCategories()} */}
             
-            {/* <div>
-              <Link to="/menu" >Soups</Link>
+            <div>
+              <Link to="/menu" >Makanan</Link>
             </div>
             <div>
-              <Link to="/menu" >Pasta</Link>
+              <Link to="/menu" >Minuman</Link>
             </div>
-            <div>
-              <Link to="/menu" >Vegetables</Link>
-            </div>
-            <div>
-              <Link to="/menu" >Sandwiches</Link>
-            </div>
-            <div>
-              <Link to="/menu" >Wraps</Link>
-            </div> */}
+        
           </div>
         </div>
         <div className={styles.right} >

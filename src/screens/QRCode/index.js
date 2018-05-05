@@ -52,17 +52,8 @@ export default class componentName extends Component {
   render() {
     return (
       <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-<<<<<<< HEAD
         <h1 style={{textAlign: 'center', marginBottom: 50, marginTop: 50}}>Aneka Sate</h1>
         <QRCode value="scanresto" style={{width: 300, height: 300, margin: 'auto', marginTop: 10}} />
-=======
-        <h1 style={{textAlign: 'center', marginBottom: 50, marginTop: 50}}>CAFETARIA UB</h1>
-        {
-          !this.state.uuid || this.state.isLoading
-            ? 'Loading ... '
-            : <QRCode value={this.state.uuid} style={{width: 300, height: 300, margin: 'auto', marginTop: 10}} />
-        }
->>>>>>> aa6628188f16ab19fe8e5b3300b8ba5aaa07d523
       </div>
     )
   }
