@@ -7,6 +7,12 @@ import { TOKEN_URL } from '../../config'
 
 //STORE
 class Token {
+  constructor() {
+    let raw = localStorage.getItem(TOKEN_URL)
+
+    if (raw) this.setToken(raw)
+  }
+
   @observable raw = ''
 
   setToken(token) {

@@ -77,7 +77,7 @@ class LeftBar extends Component {
           <Menu.Item 
             name='logout' 
             active={activeItem === 'logout'} 
-            onClick={this.handleItemClick.bind(this, '/logout')}>
+            onClick={this.handleItemClick.bind(this, '/qrcode')}>
             <div to={'#'} >
               <Image src={'/static/icon/logout.svg'} className={styles.image} inline verticalAlign='bottom'/>  
               <span className={styles.span} >Logout</span>
