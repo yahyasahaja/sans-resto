@@ -1,6 +1,6 @@
 {
-  "short_name": "Sans Resto",
-  "name": "Sans Resto Application",
+  "short_name": "Kuy Resto",
+  "name": "Kuy Resto Application",
   "icons": [
     {
       "src":"/static/icon/favicon-196x196.png",
@@ -14,8 +14,8 @@
     }
   ],
   "start_url": "/?utm_source=homescreen",
-  "background_color": "#076645",
-  "theme_color": "#076645",
+  "background_color": "#2980B9",
+  "theme_color": "#2980B9",
   "display": "standalone",
   "gcm_sender_id": "855318645063"
 }

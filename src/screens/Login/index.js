@@ -70,7 +70,7 @@ export default class Login extends Component {
 
         <div className={styles.wrapper} >
           <div className={styles.title}>
-            <h1>SANS RESTO</h1>
+            <h1>KUY RESTO</h1>
             <a>Ease of Sales Management</a>
           </div>
 

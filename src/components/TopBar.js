@@ -9,7 +9,7 @@ import styles from './css/topBar.scss'
 const notif = [
   { key: '0', text: 'Update app version v1.30.13' },
   { key: '1', text: 'Update app version v1.20.42' },
-  { key: '2', text: 'Hi, welcome to Sans App. The future is in one hand.' },
+  { key: '2', text: 'Hi, welcome to Kuy App. The future is in one hand.' },
   { key: '3', text: 'Hello, i will help you in using this application.' },
 ]
 
@@ -24,7 +24,7 @@ export default class TopBar extends Component {
     return (
       <div className={styles.container}>  
         <div className={styles.left} >
-          SANS APP
+          KUY APP
         </div>
         <div className={styles.right} >
           <Dropdown 
